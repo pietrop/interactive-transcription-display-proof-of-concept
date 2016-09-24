@@ -15,6 +15,7 @@ Using interview with Thomas Drake from [Whistle Blower Interview Archive](http:/
 see proejct page for [demo](http://pietropassarelli.com/interactive-transcription-display-proof-of-concept/).
 The project is inside `docs` folder so that it can be rendered as github page. 
 
+![Spreedsheet example](/img/preview.png)
 
 ## Backend
 
