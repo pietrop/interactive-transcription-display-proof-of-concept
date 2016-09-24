@@ -1,0 +1,82 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+small.timecode{
+    cursor: pointer;
+    color: lightgray;
+}
+
+a.timecode{
+    cursor: pointer;
+    color: lightgray;
+}
+
+#imagediv {
+    /*height: 200px;*/
+    /*background: lightblue;*/
+}
+#timeline {
+    /*height: 200px;*/
+    /*background: yellow;*/
+}
+
+#wikidiv {
+    /*height: 200px;*/
+    /*background: blue;*/
+}
+
+#tagdiv {
+    /*height: 100px;*/
+    /*background: green;*/
+}
+
+#sourcesDiv{
+  height: 650px;
+  /*background: red;*/
+}
+
+img.media-object {
+    width: 100px;
+}
+
+/* #transcriptContainer{
+    background-color: lightgrey;
+} */
+
+span {
+    padding: 3px;
+    cursor:pointer;
+     display:inline-block;
+}
+
+h5{
+  color:blue;
+  cursor: pointer;
+}
+
+img.sourceImg {
+     width: 10%;
+     height: auto;
+ }
+
+
+/*make transcript box fixed size and scrollable*/
+div#transcript {
+    overflow: scroll;
+    height: 350px;
+}
+/*sources div*/
+div#timeline{
+    overflow: scroll;
+    height: 650px;
+}
+
+#not_read {
+    color:lightgrey;
+}
+
+#read {
+    color:black;
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>WIP</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/simplex.css">
+<link rel="stylesheet" href="css/wipDemo.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+<!-- jquery version 1.11.2 -->
+   <script src="js/jquery.min.js"></script>
+
+
+<!-- FANCY BOX 2 -->
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	// 	$(".fancybox").fancybox();
+
+
+
+  $(".fancybox").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+
+
+  	});
+</script>
+
+<style type="text/css">
+  .fancybox-custom .fancybox-skin {
+    box-shadow: 0 0 50px #222;
+  }
+/*
+  body {
+    max-width: 700px;
+    margin: 0 auto;
+  }*/
+</style>
+
+<!-- FANCY BOX 2 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- JS -->
+    <script src="js/popcorn/popcorn-complete.js"></script>
+    <script src="js/popcorn/popcorn.tagthisperson.js"></script>
+    <script src="js/popcorn/popcorn.lowerthird.js"></script>
+    <script src="js/popcorn/popcorn.timeline.js"></script>
+      <script src="js/popcorn.timeline-sources.js"></script>
+    <script type="js/popcorn.lightbox.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <h1>Thomas Drake <small> Former senior executive NSA</small></h1>
+          <!-- 4 Video + Transcription-->
+          <div class="col-xs-4 col-sm-4  col-md-4 col-lg-4 col-lg-4">
+
+            <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" height="180" width="300" id="mainVideo" controls>
+                    <source src="ThomasDrake.mp4">
+
+                </video>
+            </div><!-- resp video -->
+
+            <div id="transcriptContainer">
+              <br>
+               <input type="text" class="form-control" id="search-criteria" placeholder="Search for a word...">
+               <br>
+              <div  id="transcript"></div>
+             </div><!--transcription -->
+          </div><!--  video+transcript -->
+          <!-- 2 Chapter-->
+          <div class="col-xs-2 col-sm-2  col-md-2 col-lg-2 col-lg-2">
+              <h3>Overview</h3>
+              <hr>
+              <div id="overview"></div>
+              <hr>
+          </div>
+          <!-- 3 Img +context people-->
+          <div class="col-xs-4 col-sm-4  col-md-4 col-lg-4 col-lg-4">
+
+            <div id="imagediv"></div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6  col-md-6 col-lg-6 col-lg-6">
+                  <!-- <h3>Context</h3> -->
+                    <div id="wikidiv"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6  col-md-6 col-lg-6 col-lg-6">
+                  <!-- <h3>People</h3> -->
+                    <div id="tagdiv"></div>
+                </div>
+            </div> <!-- row -->
+
+            <!-- News -->
+            <!-- <h3>In the News</h3> -->
+            <div id="timeline"></div>
+
+
+          </div>
+
+          <!-- 2 sources -->
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-lg-2">
+              <h3>Sources</h3>
+              <hr>
+              <div id="sourcesDiv"></div>
+          </div><!--  2-->
+
+      </div><!-- row -->
+    </div><!-- container -->
+<script type="text/javascript" src="js/tabletop.js"></script>
+
+<script>
+var pop = Popcorn("#mainVideo", {pauseOnLinkClicked: true});
+
+video = document.getElementById("mainVideo");
+
+window.onload = function() { init() };
+
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1b1L7D-CvtuUnQaAsJqaiwW9M1o7a26zK7jBQaKA207o/pubhtml?gid=341932816&single=true';
+
+function init() {
+  Tabletop.init( { key: public_spreadsheet_url,
+                   callback: showInfo,
+                   simpleSheet: true } );
+}
+
+var timelineElements=[];
+  function showInfo(data, tabletop) {
+
+    for (var i=0; i<data.length; i++){
+      switch (data[i].type) {
+      case "chapter":
+          // console.log("chapter");
+          // console.log(data[i]);
+          addChapter(data[i]);
+          break;
+      case "img":
+          // console.log("img");
+          // console.log(data[i]);
+          addImgToTimeline(data[i]);
+          break;
+      case "context":
+          // console.log("context");
+          // console.log(data[i]);
+          addContenxt(data[i]);
+          break;
+      case "people":
+          // console.log("people");
+          // console.log(data[i]);
+          addPerson(data[i]);
+          break;
+      case "sources":
+          // console.log("sources");
+          // console.log(data[i]);
+          addSource(data[i]);
+          break;
+      case "news":
+          // console.log("news");
+          // console.log(data[i]);
+          addNews(data[i]);
+          break;
+
+      default:
+          console.log("invalid type");
+        }//end switch
+    }//for
+  }//table top
+
+//add chapter to overview div
+//aiming to parse into something like this
+// <h4>Carrer in the US Army <small class="timecode" onclick='takeVideoToTc(723)'>00:00:45:00</small></h4>
+// <p>TD talks about his carrer in the US Army flying reconnence mission during world war two</p>
+function addChapter(ch){
+  //destination div for the chapterization outline
+  var overviewDiv =  document.getElementById("overview");
+  //create h4
+  var h4 = document.createElement("h4");
+  //create text node with title
+  var title = document.createTextNode(ch.title+" ");
+  //add text node to h4
+  h4.appendChild(title);
+  //create small node
+  var small = document.createElement("small");
+  //create text node with tc
+  var smallTcText = document.createTextNode(ch.timecodeStart);
+  //add tc text to small node
+  small.appendChild(smallTcText);
+  //create on click onclick='takeVideoToTc(723)'
+  var attOnClick = document.createAttribute("onclick");
+    attOnClick.value = "takeVideoToTc("+timcodesToSeconds(ch.timecodeStart)+")";
+  //add a class of timecode for css styling
+  var attClass = document.createAttribute("class");
+  attClass.value = "timecode";
+
+  //add it to small
+  small.setAttributeNode(attOnClick);
+  small.setAttributeNode(attClass);
+  //add small to h4
+  h4.appendChild(small);
+  //create p tag
+  var ptag = document.createElement("p");
+  //create text node with description
+  var pText = document.createTextNode(ch.text);
+  //add text node to ptag
+  overviewDiv.appendChild(h4);
+  overviewDiv.appendChild(pText);
+}
+
+//method to take the viewer back to part of the video where the source is being shown
+function takeVideoToTc(tc){
+  video.currentTime = tc;
+  video.play();
+}
+
+//Adding images to Timeline.
+function addImgToTimeline(imgO){
+  // http://popcornjs.org/popcorn-docs/plugins/#Image
+    var image={};
+    image.start = timcodesToSeconds(imgO.timecodeStart);
+    image.end=timcodesToSeconds(imgO.timecodeEnd);
+    image.href=imgO.link;
+    image.src=imgO.img;
+    // image.text=imgO.text;
+    image.target= "imagediv";
+    // console.log(image);
+    pop.image(image);
+  }
+
+
+function addContenxt(wiki){
+  var wikiEntry={};
+  wikiEntry.start=timcodesToSeconds(wiki.timecodeStart);
+  wikiEntry.end=timcodesToSeconds(wiki.timecodeEnd);
+  wikiEntry.src=wiki.link;
+  wikiEntry.title= wiki.title+" - Wikipedia";
+  wikiEntry.target="wikidiv";
+  wikiEntry.numberofwords=20;
+  pop.wikipedia(wikiEntry);
+}
+
+function addPerson(person){
+  var taggedPerson={};
+  taggedPerson.start=timcodesToSeconds(person.timecodeStart);
+  taggedPerson.end=timcodesToSeconds(person.timecodeEnd);;
+  taggedPerson.person=person.title;
+  taggedPerson.image=person.img;
+  taggedPerson.href=person.link;
+  taggedPerson.target="tagdiv";
+
+  pop.tagthisperson(taggedPerson);
+}
+
+
+function addSource(source){
+  var sourceToAdd={};
+  sourceToAdd.start=timcodesToSeconds(source.timecodeStart);
+  // sourceToAdd.end=;
+  sourceToAdd.target=timcodesToSeconds(source.timecodeEnd);
+  sourceToAdd.title=source.title;
+  sourceToAdd.text=source.text;
+  sourceToAdd.innerHTML= "<a href='"+source.link+"'  target='_blank'>"+source.innerHTML+"</a>"+"<a class='timecode' onclick='takeVideoToTc("+timcodesToSeconds(source.timecodeStart)+")'> "+source.timecodeStart+"</a>";
+  sourceToAdd.target="sourcesDiv";
+  sourceToAdd.direction="down";
+
+  pop.timeline(sourceToAdd);
+}
+
+
+
+function addNews(news){
+  var newsToAdd={};
+  newsToAdd.start=timcodesToSeconds(news.timecodeStart);
+  newsToAdd.end=timcodesToSeconds(news.timecodeEnd);
+  // sourceToAdd.end=;
+  newsToAdd.target=timcodesToSeconds(news.timecodeEnd);
+  newsToAdd.title=news.title;
+  newsToAdd.text=news.text;
+  newsToAdd.innerHTML= "<a href='"+news.link+"'target='_blank'>"+news.innerHTML+"</a>"+"<a class='timecode' onclick='takeVideoToTc("+timcodesToSeconds(news.timecodeStart)+")'> "+news.timecodeStart+"</a>";
+  newsToAdd.target="timeline";
+  newsToAdd.direction="down";
+
+  pop.timeline(newsToAdd);
+}
+
+
+// pop.wikipedia({
+//        start: 0,
+//        end: 10,
+//        src: "http://en.wikipedia.org/wiki/Cape_Town",
+//        title: "this is an article",
+//        target: "wikidiv"
+//      });
+
+//Helper function to convert tc to seconds
+function timcodesToSeconds(tc){
+  var tcar =tc.split(":");
+  var hoursInSeconds=parseInt(tcar[0])*60*60;
+  var minutesInSeconds=parseInt(tcar[1])*60;
+  var seconds=parseInt(tcar[2]);
+  var milliSecondsToseconds=parseInt(tcar[3])/1000;
+  var result = hoursInSeconds+minutesInSeconds+seconds+milliSecondsToseconds;
+  return result;
+
+}
+// console.log(timcodesToSeconds("00:11:35:00"));
+// console.log("expected 689");
+
+</script>
+<script src="js/bootstrap.min.js"></script>
+<!-- transcript.js contains the hypertranscript data structure => needs to be loaded before wipDemo.js and scrapbook.js -->
+<script src="js/transcript.js"></script>
+<!-- wipDemo.js contains hypertranscript interactivity -->
+<script src="js/wipDemo.js"></script>
+<!-- <script type="text/javascript" src="tabletop.js"></script> -->
+<!--scrapbook.js contains popcorn instance  -->
+<script src="js/scrapbook.js"></script>
+
+</body>
